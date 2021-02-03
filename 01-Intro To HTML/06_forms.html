@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+
+<body>
+    <h1>Forms</h1>
+    <button type="button">OUT OF FORM</button>
+    <form action="/tacos" method="POST">
+        <p>
+            <label for="un">Enter username</label>
+            <input type="text" name="uname" id="un" placeholder="Username">
+        </p>
+        <p>
+            <label for="pwd">Enter Password</label>
+            <input type="password" name="" id="pwd" placeholder="Password">
+        </p>
+        <button type="button">DONT SUBMIT</button>
+        <input type="color" name="" id="">
+        <input type="date" name="" id="">
+        <input type="range" name="" id="">
+
+        <label for="chs">Do you like cheese?</label>
+        <input type="checkbox" name="cheese" id="chs" checked>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <br>
+    <form action="https://www.reddit.com/search">
+        <input type="search" name="q" id="q" placeholder="Enter what to search (Reddit)">
+        <button type="submit">Search</button>
+    </form>
+
+    <br>
+    <form action="https://www.google.com/search">
+        <input type="search" name="q" id="q" placeholder="Enter what to search (Google)">
+        <button type="submit">Search</button>
+    </form>
+
+    <br>
+    <form action="https://www.youtube.com/results">
+        <input type="search" name="search_query" id="q" placeholder="Enter what to search (YouTube)">
+        <button type="submit">Search</button>
+    </form>
+
+    <form action="/tacos">
+        <input type="radio" name="agree" id="yes" value="yaa">
+        <label for="yes">I Agree</label>
+
+        <input type="radio" name="agree" id="no" value="Nahh">
+        <label for="no">I DonotAgree</label>
+        <button type="submit">Submit</button>
+    </form>
+
+    <form action="/tacos">
+
+        <select name="pets" id="pet-sel">
+            <option value="dogs">Dogs</option>
+            <option value="cats" selected>Cats</option>
+        </select>
+
+        <input type="range" name="vol" id="vol" min="0" max="100" value="80" step="10">
+        <label for="vol">Volume</label>
+
+        <button type="submit">Submit</button>
+
+        <textarea name="story" id="story" cols="20" rows="5" placeholder="Write your story"></textarea>
+    </form>
+
+    <h2>Validation Demo</h2>
+
+    <form action="/dummy">
+        <label for="fname">First name</label>
+        <input type="text" name="fname" id="fname" placeholder="fname" required>
+        <p>
+            <label for="un">Enter username</label>
+            <input type="text" name="uname" id="un" placeholder="Username" minlength="5" maxlength="20" required>
+        </p>
+        <p>
+            <label for="pwd">Enter Password</label>
+            <input type="password" name="" id="pwd" placeholder="Password">
+        </p>
+        <input type="url" name="" id="" placeholder="url">
+        <button type="submit">Click me</button>
+    </form>
+
+
+</body>
+
+</html>
