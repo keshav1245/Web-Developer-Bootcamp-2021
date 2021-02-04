@@ -1,0 +1,47 @@
+h1 {
+    background-color: pink;
+    width: 100px;
+}
+
+div {
+    width: 200px;
+    height: 200px;
+    background-color: #e5989b;
+}
+
+#one {
+    background-color: #e5989b;
+    border: 5px solid black;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+#two {
+    background-color: #b5838d;
+    border: 5px dashed olive;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+#three {
+    background-color: #6d6875;
+    padding: 10px;
+    border: 5px double coral;
+    box-sizing: border-box;
+    border-radius: 10% 30% 50% 70%;
+}
+
+.card {
+    width: 210px;
+    height: auto;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.card img {
+    width: 200px;
+    border: 5px solid rgb(236, 183, 191);
+    border-radius: 50%;
+}
