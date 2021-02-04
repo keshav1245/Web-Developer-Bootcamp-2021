@@ -1,0 +1,190 @@
+/* Universal Selector */
+/* *{
+    color: black;
+    background-color: cyan;
+} */
+
+
+/* Element Selector */
+
+
+body{
+    background-color: #f1faee;
+}
+
+button{
+    font-size: 30px;
+    background-color: #a8dadc;
+}
+
+h1, h2{
+    color: #1d3557;
+}
+
+/* ID Selector */
+#search{
+    background-color: white;
+    color: black;
+    font-size: 30px;
+}
+
+#signup{
+    background-color: #1d3557;
+    color: #f1faee;
+}
+
+span{
+    color: #457b9d;
+}
+
+/* Class Selector */
+
+.tags{
+    background-color: #e63946;
+    padding: 5px 8px;
+    border: 1px solid #457b9d;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #f1faee;
+}
+
+/* Descendent Selector */
+
+.post a{
+    text-decoration: #457b9d underline wavy;
+}
+
+li a {
+    color: #457b9d;
+}
+
+/* Adjacent Selector */
+
+input + button{
+    background-color: pink;
+}
+
+h2 + button{
+    font-size: 20px;
+}
+
+/* Direct Descendent or Direct Child */
+
+footer > a{
+    font-weight: bold;
+}
+
+
+/* attribute selector */
+
+input[type='password']{
+    font-size: 20px;
+}
+
+/* Pseudo Classes */
+
+.post button:hover{
+    background-color: #e63946;
+    color: #f1faee;
+    transition: 0.2s;
+}
+
+.post button:active{
+    background-color: #02c39a;
+}
+
+input[type='checkbox']:checked{
+    
+}
+
+.post:nth-of-type(2n+1){
+    background-color: lavenderblush;
+}
+
+/* Pseudo Elements */
+
+h2::first-letter{
+    font-size: 40px;
+}
+
+p::first-line{
+    color: purple;
+}
+
+::selection{
+    background-color: #fcbf49;
+}
+
+*{
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main_div{
+    width: 100vw;
+    height: 100vh;
+    background: #3498db;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:root{
+    --b-a-width:10vw;
+    --b-a-md-width:15vw;
+    --b-a-sm-width:20vw;
+}
+
+h1{
+    color: #fff;
+    text-align: center;
+    position: relative;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+h1::before{
+    content: "";
+    position: absolute;
+    width: var(--b-a-width);
+    border-bottom: 5px solid #2c3e50;
+    left: 50%;
+    top: 5%;
+    transform:translate(-50%);
+}
+
+h1::after{
+    width: var(--b-a-width);
+    content: "";
+    border-bottom: 5px solid #2c3e50;
+    bottom: -10%;
+    transform:translate(-50%);
+    left: 50%;
+    position: absolute;
+}
+
+
+/* Specicity */
+
+/* More specific selctor will win! */
+
+.post button:hover{
+    background-color: #e63946;
+    color: #f1faee;
+    transition: 0.2s;
+}
+
+
+button:hover{
+    background-color: olivedrab;
+    
+}
+
+/* inline styles are most specific */
+
+/* Importance */
+
+button{
+    background-color: blueviolet !important;
+}
