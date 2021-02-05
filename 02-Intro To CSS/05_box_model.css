@@ -1,7 +1,14 @@
 h1 {
     background-color: pink;
-    width: 100px;
+    width: 200px;
     padding: 30px;
+    margin: 0px;
+}
+
+span{
+    margin-top: 30px;
+    margin-left: 30px; 
+    /* Don't Move down, to be studied in display */
 }
 
 div {
@@ -15,6 +22,8 @@ div {
     border: 5px solid black;
     box-sizing: border-box;
     border-radius: 5px;
+    margin-left: 50px;
+    margin-bottom: 100px;
 }
 
 #two {
@@ -22,6 +31,7 @@ div {
     border: 5px dashed olive;
     padding-right: 50px;
     border-radius: 5px;
+    margin:200px;
 }
 
 #three {
@@ -49,4 +59,8 @@ div {
 
 button {
     padding: 8px 16px;
+}
+
+body{
+    margin:0px;
 }

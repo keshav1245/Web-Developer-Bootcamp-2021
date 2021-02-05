@@ -1,0 +1,42 @@
+/* h1{
+    background-color: palegoldenrod;
+    border: 1px solid black;
+    display: inline;
+}
+
+span{
+    background-color: turquoise;
+    border: 1px solid black;
+    display: block;
+} */
+
+span{
+    /* background-color: palevioletred; */
+    border: 1px solid black;
+    width: 500px;
+    /* In Inline elements width is ignored, height is ignored */
+    padding: 10px;
+    margin: 20px;
+    /* Padding is there but ignored by the rest of our content on the page */
+    /* Margin is visible on left and right side but vertically is ignored */
+}
+
+h1{
+    background-color: paleturquoise;
+    border: 1px solid black;
+    width: 500px;
+    height: 50px;
+    padding: 10px;
+    margin: 100px;
+}
+
+/* This brings to inline block, behaves like inline, but width, margin etc respected */
+
+div{
+    width: 200px;
+    height: 200px;
+    background-color: olive;
+    border: 5px solid black;
+    display: inline-block;
+    margin: 5px;
+}
