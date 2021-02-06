@@ -1,0 +1,16 @@
+
+nav{
+    font-family: Roboto,sans-serif;
+    width: 30%;
+    margin-left: calc(10%/6);
+    border-bottom: 2px solid #c1c1c1;
+    text-align: left;
+    font-size: 1.5em;
+    padding: 1em 0;
+}
+
+
+img{
+    width: 30%;
+    margin: calc(10%/6);
+}

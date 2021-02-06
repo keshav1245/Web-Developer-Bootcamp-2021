@@ -1,0 +1,17 @@
+section {
+    width: 80%;
+    height: 800px;
+    background-color: #1400ff;
+    /* color: white; */
+    margin: 0 auto;
+    /* background-image: url("sample.jpg"); */
+    /* background-size: 30%; */
+    /* background-repeat: no-repeat; */
+    /* background-position: center; */
+    background: center/40% no-repeat url("sample.jpg"), blueviolet;
+}
+
+h1{
+    font-size: 100px;
+    color: white;
+}
