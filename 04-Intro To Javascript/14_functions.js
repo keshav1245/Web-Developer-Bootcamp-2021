@@ -63,3 +63,150 @@ function returnDay(day){
         return dow[day-1]
     
 }
+
+// Functions Scopes
+
+let apples = 0
+function collectApples(){
+    apples = 6
+}
+
+// console.log(apples)
+// collectApples()
+// console.log(apples)
+
+
+let bird = "Scarlet Macaw"
+function birdWatch(){
+    let bird = "Great Blue Heron"
+    console.log(bird)
+}
+
+console.log(bird)
+birdWatch()
+console.log(bird)
+
+const creature = "Common Sea Dragon";
+ 
+function scubaDive(){
+    const creature = "Spanish Dancer"; //A type of sea slug
+    console.log(creature);
+}
+ 
+scubaDive();
+
+// The above examples are for function scope
+
+// Block code
+let radius = 8
+
+if (radius > 0){
+    const PI = 3.14159
+    let msg = "HIIII"
+}
+
+console.log(radius)
+
+// Lexical scope
+
+function bankRobbed(){
+    const heroes = ['spidy','batman','wolverine']
+    function cry(){
+        for(hero of heroes){
+            console.log(`${hero}`)
+        }
+    }
+    cry()
+}
+
+bankRobbed()
+
+
+// FUNCTION EXPRESSIONS
+
+function way1(x,y){
+    return x + y
+}
+
+const two_add = function(x,y){
+    return x + y
+}
+
+// higher order functions
+let greeting = function(){
+    console.log("Hello, Greetings")
+}
+
+
+function callTwice(fun){
+    fun()
+    fun()
+}
+
+// Returning Functions
+
+function make_mystery_func(){
+    let ran = Math.random()
+
+    if (ran > 0.5){
+        return function(){
+            console.log("I am Happy !")
+        }
+    }else{
+        return function(){
+            console.log("I am Sad !")
+        }
+    }
+}
+
+function make_bet_fun(min,max){
+    return function(num){
+        return num >= min && num <= max
+    }
+}
+
+// FUnctions as methods
+let math = {
+    multiply: function(x,y){
+        return x * y
+    },
+    square: function(x){
+        return x ** 2
+    },
+    cube : function(x){
+        return x ** 3
+    }
+}
+
+const square ={
+    area: function(side){
+        return side * side
+    },
+    perimeter: function(side){
+        return 4 * side
+    }
+}
+
+let cat = {
+    name:"Kitty",
+    color:'grey',
+    breed:"german",
+    meow(){
+        console.log(`${this.name} says Purrrrr Meoww`) //Kitty says Purrrrr Meoww
+    }
+}
+
+let m2 = cat.meow
+// m2() prints Kitty says Purrrrr Meoww when use cat.name instead of this.name
+
+
+let hen = {
+    
+    name:"Helen",
+    eggCount:0,
+    layAnEgg: function(){
+        this.eggCount++
+        return "EGG"
+    }
+    
+}
