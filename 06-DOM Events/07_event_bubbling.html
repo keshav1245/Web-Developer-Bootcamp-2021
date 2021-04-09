@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event bubbling !</title>
+    <style>
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="alert('Button Clicked !')">Click Me !</button>
+
+    <p onclick="alert('paragraph clicked')">
+        I am paragraph
+        <button onclick="alert('Button Clicked !')">Click Me !</button>
+    </p>
+
+
+    <section onclick="alert('Section clicked !')">
+        I am a section
+        <p onclick="alert('paragraph clicked')">
+            I am paragraph
+            <button onclick="alert('Button Clicked !')">Click Me !</button>
+        </p>
+    </section>
+
+
+    <div id="container">
+        I am a div
+        <button id="divbtn">Change Color</button>
+    </div>
+
+    <script src="07_event_bubbling.js"></script>
+</body>
+</html>
