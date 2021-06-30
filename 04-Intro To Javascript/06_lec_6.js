@@ -65,7 +65,6 @@ Math.pow(2,3)
 8
 2 ** 3
 8
-// NO TOUCHING! (please)
 const die1 = Math.floor(Math.random() * 6) + 1; //random number from 1-6
 const die2 = Math.floor(Math.random() * 6) + 1; //random number from 1-6
 

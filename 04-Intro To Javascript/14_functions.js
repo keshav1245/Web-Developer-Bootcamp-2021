@@ -71,9 +71,9 @@ function collectApples(){
     apples = 6
 }
 
-// console.log(apples)
-// collectApples()
-// console.log(apples)
+console.log(apples)
+collectApples()
+console.log(apples)
 
 
 let bird = "Scarlet Macaw"
