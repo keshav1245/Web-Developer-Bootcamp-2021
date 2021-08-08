@@ -10,3 +10,5 @@ const square = (x) => multiply(x,x)
 function isRightTriangle(a, b, c) {
     return square(a) + square(b) === square(c)
 }
+
+//loupe -> website to see callback stack 
