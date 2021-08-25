@@ -9,3 +9,4 @@ LINKS TO NPM PACKAGES USED
 5. Express JS : https://www.npmjs.com/package/express
 6. UUID : https://www.npmjs.com/package/uuid
 7. method-override : https://www.npmjs.com/package/method-override
+8. mongoose : https://www.npmjs.com/package/mongoose
