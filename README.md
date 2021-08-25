@@ -1,6 +1,6 @@
 # Web-Developer-Bootcamp-2021
 
-LINKS TO NPM PACKAGES USED
+LINKS TO NPM PACKAGES USED IN THE WHOLE COURSE
 
 1. Colors : https://www.npmjs.com/package/colors
 2. Jokes : https://www.npmjs.com/package/give-me-a-joke
