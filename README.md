@@ -1,6 +1,6 @@
 # Web-Developer-Bootcamp-2021
 
-LINKS TO NPM PACKAGES USED
+LINKS TO NPM PACKAGES USED IN THE WHOLE COURSE
 
 1. Colors : https://www.npmjs.com/package/colors
 2. Jokes : https://www.npmjs.com/package/give-me-a-joke
@@ -9,3 +9,4 @@ LINKS TO NPM PACKAGES USED
 5. Express JS : https://www.npmjs.com/package/express
 6. UUID : https://www.npmjs.com/package/uuid
 7. method-override : https://www.npmjs.com/package/method-override
+8. mongoose : https://www.npmjs.com/package/mongoose
