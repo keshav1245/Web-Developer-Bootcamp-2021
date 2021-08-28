@@ -10,3 +10,4 @@ LINKS TO NPM PACKAGES USED IN THE WHOLE COURSE
 6. UUID : https://www.npmjs.com/package/uuid
 7. method-override : https://www.npmjs.com/package/method-override
 8. mongoose : https://www.npmjs.com/package/mongoose
+9. morgan : https://www.npmjs.com/package/morgan
