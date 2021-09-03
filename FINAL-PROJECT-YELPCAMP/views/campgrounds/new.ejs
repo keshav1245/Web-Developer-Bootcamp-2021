@@ -2,18 +2,27 @@
 <div class="row">
     <h1 class="text-center">Add a New Campground</h1>
     <div class="col-6 offset-3">
-        <form action="/campgrounds" method="post">
+        <form class='validated-form' action="/campgrounds" method="post" novalidate>
             <div class='mb-3'>
                 <label class="form-label" for="title">Title</label>
-                <input class="form-control" type="text" id='title' name="campground[title]" placeholder="Campground Title" />
+                <input required class="form-control" type="text" id='title' name="campground[title]" placeholder="Campground Title" />
+                <div class="valid-feedback">
+                    Looks Good
+                </div>
             </div>
             <div class='mb-3'>
                 <label class="form-label" for="location">Location</label>
-                <input class="form-control" type="text" id='location' name="campground[location]" placeholder="Campground Location" />
+                <input required class="form-control" type="text" id='location' name="campground[location]" placeholder="Campground Location" />
+                <div class="valid-feedback">
+                    Looks Good
+                </div>
             </div>
             <div class='mb-3'>
                 <label class="form-label" for="image">Image URL</label>
-                <input class="form-control" type="text" id='image' name="campground[image]" placeholder="Campground Image" />
+                <input required class="form-control" type="text" id='image' name="campground[image]" placeholder="Campground Image" />
+                <div class="valid-feedback">
+                    Looks Good
+                </div>
             </div>
             <div class="mb-3">
                 <label class="sr-only" for="price">Username</label>
@@ -21,12 +30,18 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                   </div>
-                  <input type="number" class="form-control" id="price" name="campground[price]" placeholder="Campground price per night">
+                  <input required type="number" class="form-control" id="price" name="campground[price]" placeholder="Campground price per night">
+                  <div class="valid-feedback">
+                    Looks Good
+                  </div>
                 </div>
               </div>
             <div class='mb-3'>
                 <label class="form-label" for="description">Campground Description</label>
-                <textarea rows='4' class="form-control" type="text" id='description' name="campground[description]" placeholder="Enter Campground description"></textarea>
+                <textarea required rows='4' class="form-control" type="text" id='description' name="campground[description]" placeholder="Enter Campground description"></textarea>
+                <div class="valid-feedback">
+                    Looks Good
+                </div>
             </div>
             <div class="mb-3">
                 <input class='btn btn-success form-control' type="submit" value="Add New Campground">
@@ -35,4 +50,3 @@
         <a href="/campgrounds">Back to all campgrounds</a>
     </div>
 </div>
-
