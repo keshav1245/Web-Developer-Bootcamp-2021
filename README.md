@@ -11,3 +11,4 @@ LINKS TO NPM PACKAGES USED IN THE WHOLE COURSE
 7. method-override : https://www.npmjs.com/package/method-override
 8. mongoose : https://www.npmjs.com/package/mongoose
 9. morgan : https://www.npmjs.com/package/morgan
+10. JOI : https://www.npmjs.com/package/joi
