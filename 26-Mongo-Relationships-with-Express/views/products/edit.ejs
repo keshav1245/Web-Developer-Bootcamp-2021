@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+</head>
+<body>
+    <h1>Edit : <%= prod.name %> </h1>
+    <form action=<%= "/products/" + prod._id + "?_method=PUT"%> method='POST'>
+    
+        <div>
+            <label for="name">Name : </label>
+            <input type="text" name = 'name' id ='name' placeholder="Name of Product" value = '<%= prod.name %>' />
+        </div>
+        <div>
+            <label for="price">Price($) : </label>
+            <input type="number" name = 'price' id ='price' placeholder="Price of Product" value = '<%= prod.price %>' />
+        </div>
+        <div>
+            <label for="category">Category : </label>
+            <select name="category" id="category">
+                
+                <option value="fruit" <%= prod.category === 'fruit' ? 'selected' : ''%> >Fruit</option>
+                
+                <option value="vegetable" <%= prod.category === 'vegetable' ? 'selected' : ''%>>Vegetable</option>
+            
+                <option value="dairy" <%= prod.category === 'dairy' ? 'selected' : ''%>>Dairy</option>
+                
+            </select>
+        </div>
+        <input type="submit" value='Submit'/>
+    </form>
+
+    <a href="/products/<%= prod._id%>">Cancel</a></li>
+</body>
+</html>
