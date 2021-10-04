@@ -12,3 +12,5 @@ LINKS TO NPM PACKAGES USED IN THE WHOLE COURSE
 8. mongoose : https://www.npmjs.com/package/mongoose
 9. morgan : https://www.npmjs.com/package/morgan
 10. JOI : https://www.npmjs.com/package/joi
+11. Cookie Parser : https://www.npmjs.com/package/cookie-parser
+
