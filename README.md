@@ -15,3 +15,4 @@ LINKS TO NPM PACKAGES USED IN THE WHOLE COURSE
 11. Cookie Parser : https://www.npmjs.com/package/cookie-parser
 12. Express Session : https://www.npmjs.com/package/express-session
 13. Connect-Flash : https://www.npmjs.com/package/connect-flash
+14. BCrypt : https://www.npmjs.com/package/bcrypt
