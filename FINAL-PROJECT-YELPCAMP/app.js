@@ -11,8 +11,9 @@ const passportLocal = require('passport-local');
 const User = require('./models/user')
 
 
-const campgrounds = require('./routes/campgrounds');
-const reviews = require('./routes/reviews');
+const campgroundRoutes = require('./routes/campgrounds');
+const reviewRoutes = require('./routes/reviews');
+const userRoutes = require('./routes/users');
 
 mongoose.connect('mongodb://localhost:27017/yelp-camp',{
     useNewUrlParser : true,
@@ -71,20 +72,20 @@ app.get('/',(req, res)=>{
 })
 
 // creating a fake user for demonstration purposes
-app.get('/fakeUser', async(req, res)=>{
-    const user = new User({
-        email : 'testing@yelpcamp.com',
-        username : 'testing1'
-    })
-    const registeredUser = await User.register(user, 'myPassword');
-    res.send(registeredUser)
-})
+// app.get('/fakeUser', async(req, res)=>{
+//     const user = new User({
+//         email : 'testing@yelpcamp.com',
+//         username : 'testing1'
+//     })
+//     const registeredUser = await User.register(user, 'myPassword');
+//     res.send(registeredUser)
+// })
 
 
 
 // CAMPGROUND ROUTES START
 
-app.use('/campgrounds', campgrounds);
+app.use('/campgrounds', campgroundRoutes);
 
 // CAMPGROUND ROUTES END
 
@@ -92,9 +93,16 @@ app.use('/campgrounds', campgrounds);
 
 // REVIEW ROUTES START
 
-app.use('/campgrounds/:id/reviews', reviews);
+app.use('/campgrounds/:id/reviews', reviewRoutes);
 
 // REVIEW ROUTES END
+
+// USERS ROUTES START
+
+app.use('/', userRoutes);
+
+// USER ROUTES END
+
 
 app.all('*', (req,res,next)=>{
     next(new ExpressError('Page Not Found !!', 404))
