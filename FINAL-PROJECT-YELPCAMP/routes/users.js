@@ -15,7 +15,7 @@ router.post('/register', catchAsync(async(req, res, next) => {
         const { email, username, password } = req.body;
         const user = new User({ email, username})
         const registeredUser = await User.register(user, password);
-        re.login(registeredUser, err => {
+        req.login(registeredUser, err => {
             if(err) return next(err)
             console.log(registeredUser);
             req.flash('success', 'Welcome to Yelp Camp')
