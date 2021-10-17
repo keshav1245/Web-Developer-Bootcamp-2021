@@ -38,24 +38,25 @@
             
         </div>
         <div class="col-6">
-            <h2>Leave a Review</h2>
-            <form novalidate class="mb-3 validated-form" action="/campgrounds/<%= campground._id %>/reviews" method="POST">
-                <div class="mb-3">
-                    <label for="range" class="form-label">Ratings : </label>
-                    <input type="range" class="form-range" min="1" max="5" step="1" id="range" name='review[rating]'>
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label" for="body">Review : </label>
-                    <textarea required class='form-control' type='text' name='review[body]' id='body' cols=80 rows='5'
-                        placeholder='Enter your review'></textarea>
-                    <div class="valid-feedback">
-                        Looks Good!
+            <% if(currentUser) {%> 
+                <h2>Leave a Review</h2>
+                <form novalidate class="mb-3 validated-form" action="/campgrounds/<%= campground._id %>/reviews" method="POST">
+                    <div class="mb-3">
+                        <label for="range" class="form-label">Ratings : </label>
+                        <input type="range" class="form-range" min="1" max="5" step="1" id="range" name='review[rating]'>
                     </div>
-                </div>
-                <button class="mb-3 btn btn-outline-success form-control" type="submit">Submit</button>
-            </form>
 
+                    <div class="mb-3">
+                        <label class="form-label" for="body">Review : </label>
+                        <textarea required class='form-control' type='text' name='review[body]' id='body' cols=80 rows='5'
+                            placeholder='Enter your review'></textarea>
+                        <div class="valid-feedback">
+                            Looks Good!
+                        </div>
+                    </div>
+                    <button class="mb-3 btn btn-outline-success form-control" type="submit">Submit</button>
+                </form>
+            <% } %> 
             <div class="mb-3">
                 <% if(campground.reviews.length) {%>
                     
@@ -63,10 +64,13 @@
                         <div class="card mb-2">
                             <div class='card-body'>
                                 <h5 class="card-title">Rating : <%= review.rating %> / 5 </h5>
+                                <h6 class="card-subtitle mb-2 text-muted">By <%= review.author.username %></h6>
                                 <p class='card-text'>Review : <%= review.body %> </p>
-                                <form action="/campgrounds/<%= campground._id%>/reviews/<%= review._id%>?_method=DELETE" method="POST" >
-                                    <button class="btn btn-danger">Delete</button>
-                                </form>
+                                <% if(currentUser && review.author.equals(currentUser._id) ) {%> 
+                                    <form action="/campgrounds/<%= campground._id%>/reviews/<%= review._id%>?_method=DELETE" method="POST" >
+                                        <button class="btn btn-danger">Delete</button>
+                                    </form>
+                                <% } %> 
                             </div>
                         </div>
                     <% } %> 
