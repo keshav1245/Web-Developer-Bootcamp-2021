@@ -17,3 +17,7 @@ LINKS TO NPM PACKAGES USED IN THE WHOLE COURSE
 13. Connect-Flash : https://www.npmjs.com/package/connect-flash
 14. BCrypt : https://www.npmjs.com/package/bcrypt
 15. passport-local-mongoose : https://www.npmjs.com/package/passport-local-mongoose
+16. Multer : https://www.npmjs.com/package/multer
+17. dotenv : https://www.npmjs.com/package/dotenv
+18. Cloudinary : https://www.npmjs.com/package/cloudinary
+19. Multer-Storage-Cloudinary : https://www.npmjs.com/package/multer-storage-cloudinary

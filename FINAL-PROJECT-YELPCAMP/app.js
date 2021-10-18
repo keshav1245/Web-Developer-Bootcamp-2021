@@ -10,6 +10,10 @@ const passport = require('passport');
 const passportLocal = require('passport-local');
 const User = require('./models/user')
 
+if(process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
+
 
 const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
@@ -55,7 +59,6 @@ passport.serializeUser(User.serializeUser()) // store in session
 passport.deserializeUser(User.deserializeUser()) // unstore in session
 
 app.use((req, res, next) => {
-    console.log(req.session);
     res.locals.currentUser = req.user;
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error'); 
