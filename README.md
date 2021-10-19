@@ -21,3 +21,4 @@ LINKS TO NPM PACKAGES USED IN THE WHOLE COURSE
 17. dotenv : https://www.npmjs.com/package/dotenv
 18. Cloudinary : https://www.npmjs.com/package/cloudinary
 19. Multer-Storage-Cloudinary : https://www.npmjs.com/package/multer-storage-cloudinary
+20. BS-Custom-File-Input : https://www.npmjs.com/package/bs-custom-file-input
