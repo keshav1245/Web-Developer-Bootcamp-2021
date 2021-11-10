@@ -9,6 +9,8 @@ const ExpressError = require('./utils/ExpressError');
 const passport = require('passport');
 const passportLocal = require('passport-local');
 const User = require('./models/user')
+const mongoSanitize = require('express-mongo-sanitize');
+const helmet = require('helmet');
 
 if(process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
@@ -18,8 +20,10 @@ if(process.env.NODE_ENV !== 'production') {
 const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 const userRoutes = require('./routes/users');
-
-mongoose.connect('mongodb://localhost:27017/yelp-camp',{
+const MongoDBStore = require("connect-mongo");
+// const dbUrl = process.env.DB_URL
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp'
+mongoose.connect(dbUrl,{
     useNewUrlParser : true,
     useUnifiedTopology : true
 })
@@ -31,23 +35,88 @@ db.once("open", function() {
 })
 
 const app = express();
-app.engine('ejs', ejsMate)
+app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded({extended: true}));
-app.use(methodOverride('_method'))
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(methodOverride('_method'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(mongoSanitize());
+app.use(helmet({contentSecurityPolicy : false}));
+
+// const scriptSrcUrls = [
+//     "https://stackpath.bootstrapcdn.com/",
+//     "https://api.titles.mapbox.com/",
+//     "https://api.mapbox.com/",
+//     "https://kit.fontawesome.com/",
+//     "https://cdnjs.cloudflare.com/",
+//     "https://cdn.jsdelivr.net"
+// ]
+
+// const styleSrcUrls = [
+//     "https://kit-free.fontawesome.com/",
+//     "https://stackpath.bootstrapcdn.com/",
+//     "https://api.mapbox.com/",
+//     "https:://api.titles.mapbox.com/",
+//     "https://fonts.googleapis.com/",
+//     "https://use.fontawesome.com/"
+// ]
+
+// const connectSrcUrls = [
+//     "https://api.mapbox.com/",
+//     "https://a.titles.mapbox.com/",
+//     "https://b.titles.mapbox.com/",
+//     "https://events.mapbox.com/"
+// ]
+
+// const fontSrcUrls = [
+//     "https://fonts.googleapis.com",
+//     "https://fonts.gstatic.com"
+// ]
+
+// app.use(
+//     helmet.contentSecurityPolicy({
+//         directives : {
+//             defaultSrc : [],
+//             connectSrc : ["'self'", ...connectSrcUrls],
+//             scriptSrc : ["'unsafe-inline'", "'self'", ...scriptSrcUrls],
+//             styleSrc : ["'self'", "'unsafe-inline'", ...styleSrcUrls],
+//             workerSrc : ["'self'", "blob:"],
+//             objectSrc : [],
+//             imageSrc : [
+//                 "'self'",
+//                 "blob:",
+//                 "data:",
+//                 "https://res.cloudinary.com/zukayu/",
+//                 "https://images.unsplash.com/"
+//             ],
+//             fontSrc : ["'self'", ...fontSrcUrls]
+//         }
+//     })
+// )
+
+const secret = process.env.SECRET || 'SecretSecretMySecret';
+
+const storeOptions = {
+    mongoUrl : dbUrl,
+    secret : secret,
+    touchAfter : 24 * 3600
+}
 
 const sessionConfig = {
-    secret: 'SecretSecretMySecret',
+    store: MongoDBStore.create(storeOptions),
+    name : "yelpcamp",
+    secret: secret,
     resave: false,
     saveUninitialized : true,
     cookie : {
         httpOnly : true,
+        // secure : true,
         expires :Date.now() + (7 * 86400*1000),
         maxAge : (7 * 86400*1000)
     }
 }
+
 app.use(session(sessionConfig))
 app.use(flash())
 
