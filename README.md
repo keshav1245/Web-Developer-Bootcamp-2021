@@ -22,3 +22,7 @@ LINKS TO NPM PACKAGES USED IN THE WHOLE COURSE
 18. Cloudinary : https://www.npmjs.com/package/cloudinary
 19. Multer-Storage-Cloudinary : https://www.npmjs.com/package/multer-storage-cloudinary
 20. BS-Custom-File-Input : https://www.npmjs.com/package/bs-custom-file-input
+21. MapBox : npm install @mapbox/mapbox-sdk
+22. Express Mongo Sanitize : https://www.npmjs.com/package/express-mongo-sanitize
+23. Sanitize HTML : https://www.npmjs.com/package/sanitize-html
+24. Helmet : https://www.npmjs.com/package/helmet
